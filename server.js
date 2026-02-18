@@ -1,6 +1,8 @@
 var express = require('express');
+import express from 'express';
 //var serveStatic = require('serve-static');
-var cors = require('cors');
+//var cors = require('cors');
+import cors from 'cors';
 
 const app = express();
 app.use(function (req, res, next) {
