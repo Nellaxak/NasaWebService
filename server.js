@@ -61,9 +61,9 @@ var corsOptions = {
 };
 app.use(
   express.json({ type: ['application/json', 'text/plain'] }),
-  cors(corsOptions)
+  /*cors(corsOptions)*/
 );
-app.get('/', cors(corsOptions), async (req, res, next) => {
+app.get('/', async (req, res, next) => {
   console.log('my get')
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
