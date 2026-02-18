@@ -55,14 +55,7 @@ async function CalcData() {
 let startDate
 let endDate
 [startDate, endDate] = await CalcData()
-//console.log('dates fetch', startDate, endDate)
-//try {
-const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
-//const data = await resp.json()
-console.log('resp status', resp.status)
-/*} catch (err) {
-  console.log('err fetch', err)
-}*/
+
 var corsOptions = {
   origin: '*',
 };
@@ -70,3 +63,10 @@ app.use(
   express.json({ type: ['application/json', 'text/plain'] }),
   cors(corsOptions)
 );
+app.get('/', cors(corsOptions), async (req, res, next) => {
+  console.log('my get')
+  const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
+  const data = await resp.json()
+  console.log('resp status', resp.status)
+  res.send(data);
+});
