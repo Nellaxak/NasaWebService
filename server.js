@@ -37,7 +37,7 @@ async function CalcData() {
   let currentDate = new Date()
   currentDate.setDate(currentDate.getDate())// + this.count);
   let tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + this.count);
+  tomorrow.setDate(tomorrow.getDate())// + this.count);
   //console.log('myDate', currentDate, endNext)
   let startDate = currentDate.getFullYear() + '-' +
     (currentDate.getMonth() + 1) + '-' +
