@@ -27,12 +27,12 @@ var hostname = '127.0.0.1';
 const expressServer = app.listen(port, hostname, async () => {
   console.log('listen', port);
 });
-const io = new Server(expressServer, {
+/*const io = new Server(expressServer, {
   cors: {
     origin: "*",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
   }
-})
+})*/
 async function CalcData() {
   let currentDate = new Date()
   currentDate.setDate(currentDate.getDate())// + this.count);
@@ -56,13 +56,13 @@ let startDate
 let endDate
 [startDate, endDate] = await CalcData()
 //console.log('dates fetch', startDate, endDate)
-try {
-  const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
-  //const data = await resp.json()
-  console.log('resp status', resp.status)
-} catch (err) {
+//try {
+const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
+//const data = await resp.json()
+console.log('resp status', resp.status)
+/*} catch (err) {
   console.log('err fetch', err)
-}
+}*/
 var corsOptions = {
   origin: '*',
 };
