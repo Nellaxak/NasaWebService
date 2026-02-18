@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm run dev",
-    "build": "npm run build",
+    "build": "node server.js",
     "start": "npm run start"
   },
   "dependencies": {
