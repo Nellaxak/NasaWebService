@@ -22,7 +22,7 @@ async function CalcData() {
 //let startDate:'string'
 //let endDate:'string'
 const startDate = await CalcData()
-app.get('/', async (_req, res) => {
+app.get('/', async (_req: any, res: any) => {
   console.log('lllll')
   //res.send('Hello Express!')
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
@@ -31,12 +31,12 @@ app.get('/', async (_req, res) => {
   res.send(data);
 })
 
-app.get('/api/users/:id', (_req, res) => {
+/*app.get('/api/users/:id', (_req, res) => {
   res.json({ id: _req.params.id })
 })
 
 app.get('/api/posts/:postId/comments/:commentId', (_req, res) => {
   res.json({ postId: _req.params.postId, commentId: _req.params.commentId })
-})
+})*/
 
 export default app

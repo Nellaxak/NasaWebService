@@ -1,16 +1,11 @@
 {
   "name": "express",
   "type": "module",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
   "dependencies": {
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "@types/express": "5.0.0",
+    "@types/express": "^5.0.0",
     "@types/node": "20.11.17",
     "typescript": "5.8.3"
   }
