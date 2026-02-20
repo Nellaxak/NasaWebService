@@ -1,10 +1,10 @@
 {
-  "name": "express",
-  "type": "commonjs",
+  "name": "myexpress",
+  "type": "module",
   "scripts": {
-    "dev": "node server.cjs",
-    "build": "node server.cjs",
-    "start": "node server.cjs"
+    "dev": "node server.mjs",
+    "build": "node server.mjs",
+    "start": "node server.mjs"
   },
   "dependencies": {
     "express": "^5.1.0"
