@@ -1,6 +1,5 @@
 {
   "name": "express",
-  "type": "module",
   "scripts": {
     "dev": "node server",
     "build": "node server",
