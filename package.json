@@ -1,6 +1,6 @@
 {
   "name": "express",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "express": "^5.1.0"
   },
