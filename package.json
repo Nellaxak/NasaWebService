@@ -1,6 +1,6 @@
 {
   "name": "express",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "node server.mjs",
     "build": "node server.mjs",
