@@ -1,6 +1,11 @@
 {
   "name": "express",
   "type": "module",
+  "scripts": {
+    "dev": "node server",
+    "build": "node server",
+    "start": "node server"
+  },
   "dependencies": {
     "express": "^5.1.0"
   },
