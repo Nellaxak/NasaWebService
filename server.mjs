@@ -22,6 +22,7 @@ async function CalcData() {
 //let startDate:'string'
 //let endDate:'string'
 const startDate = await CalcData()
+console.log(startDate)
 app.get('/', async (_req, res) => {
   console.log('lllll')
   //res.send('Hello Express!')
