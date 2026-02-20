@@ -2,9 +2,9 @@
   "name": "express",
   "type": "module",
   "scripts": {
-    "dev": "node server",
-    "build": "node server",
-    "start": "node server"
+    "dev": "node server.mjs",
+    "build": "node server.mjs",
+    "start": "node server.mjs"
   },
   "dependencies": {
     "express": "^5.1.0"
