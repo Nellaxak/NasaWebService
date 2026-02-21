@@ -1,24 +1,15 @@
-To develop locally:
+# README
 
-```
-npm install
-vc dev
-```
+This is the [Express](https://expressjs.com) [Hello world](https://expressjs.com/en/starter/hello-world.html) example on [Render](https://render.com).
 
-```
-open http://localhost:3000
-```
+The app in this repo is deployed at [https://express.onrender.com](https://express.onrender.com).
 
-To build locally:
+## Deployment
 
-```
-npm install
-vc build
-```
+See https://render.com/docs/deploy-node-express-app or follow the steps below:
 
-To deploy:
+Create a new web service with the following values:
+  * Build Command: `yarn`
+  * Start Command: `node app.js`
 
-```
-npm install
-vc deploy
-```
+That's it! Your web service will be live on your Render URL as soon as the build finishes.
