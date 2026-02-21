@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "node server.mjs",
-    "build": "node server.mjs",
+    "build": "yarn build",
     "start": "node server.mjs"
   },
   "dependencies": {

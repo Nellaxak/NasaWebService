@@ -1,6 +1,6 @@
 import express from 'express';
-//var express = require('express');
-//const app = express()
+
+const app = express()
 async function CalcData() {
   let currentDate = new Date()
   currentDate.setDate(currentDate.getDate())// + this.count);
@@ -27,7 +27,7 @@ console.log(startDate)
   console.log('lllll')
   //res.send('Hello Express!')
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
-  const data = await resp.json()
+  //const data = await resp.json()
   console.log('resp status', resp.status)
 //  res.send(data);
 //})
