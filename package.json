@@ -9,9 +9,15 @@
   "private": false,
   "type": "module",
   "scripts": {
+    "build": "yarn run build",
     "start": "node app.js"
   },
   "dependencies": {
     "express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.0"
   }
 }
