@@ -32,7 +32,7 @@ app.post('/', async (req, res) => {
   const data = await resp.json()
   // You can then save this data to a database, perform validation, etc.
   // Send a response back to the client
-  res.status(201).send(data);
+  res.status(200).send(data);
 });
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
