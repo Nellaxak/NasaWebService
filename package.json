@@ -9,7 +9,6 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "build": "yarn run build",
     "start": "node app.js"
   },
   "dependencies": {
