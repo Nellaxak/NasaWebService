@@ -1,6 +1,9 @@
 import express from 'express';
-
+import bodyParser from "body-parser";
 const app = express()
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
 const port = process.env.PORT || 3000;
 async function CalcData(page) {
   let currentDate = new Date()
