@@ -1,6 +1,7 @@
 import express from 'express';
 
 const app = express()
+const port = 3000;
 async function CalcData() {
   let currentDate = new Date()
   currentDate.setDate(currentDate.getDate())// + this.count);
@@ -31,7 +32,9 @@ app.get('/', async (_req, res) => {
   console.log('resp status', resp.status)
   res.send(data);
 })
-
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
 /*app.get('/api/users/:id', (_req, res) => {
   res.json({ id: _req.params.id })
 })
