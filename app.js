@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 const app = express()
 
 //app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json()) 
+app.use(bodyParser.json())
 const port = process.env.PORT || 3000;
 async function CalcData(page) {
   let currentDate = new Date()
@@ -19,15 +19,17 @@ async function CalcData(page) {
   })
 }
 //let startDate:'string'
-/*app.get('/', async (_req, res) => {
-  const startDate = await CalcData(0)
+let page = 0
+app.get('/', async (_req, res) => {
+  const startDate = await CalcData(page)
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
   res.send(data);
-})*/
+})
 app.post('/', async (req, res) => {
   //console.log('Received data:', req.body); // Access the submitted data
   const startDate = await CalcData(Number(req.body.page))
+  page = Number(req.body.page)
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
   // You can then save this data to a database, perform validation, etc.
