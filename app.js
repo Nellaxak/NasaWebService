@@ -19,10 +19,10 @@ async function CalcData(page) {
   })
 }
 //let startDate:'string'
-let page = 0
-app.get('/', async (_req, res) => {
-  console.log('render page', page)
-  const startDate = await CalcData(page)
+//let page = 0
+app.get('/page:page', async (_req, res) => {
+  console.log('render page', _req.params.page)
+  const startDate =  _req.params.page
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
   res.send(data);
@@ -30,7 +30,7 @@ app.get('/', async (_req, res) => {
 app.post('/', async (req, res) => {
   //console.log('Received data:', req.body); // Access the submitted data
   const startDate = await CalcData(Number(req.body.page))
-  page = Number(req.body.page)
+  //page = Number(req.body.page)
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
   // You can then save this data to a database, perform validation, etc.
