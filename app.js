@@ -19,8 +19,8 @@ async function CalcData(page) {
   })
 }
 //let startDate:'string'
-//let page = 0
-app.get('/page', async (_req, res) => {
+/*/page/:page*/
+app.get('/page/:page', async (_req, res) => {
   console.log('render page', _req)
   const startDate = _req.params.page
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
