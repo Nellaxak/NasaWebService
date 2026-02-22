@@ -19,14 +19,14 @@ async function CalcData(page) {
   })
 }
 //let startDate:'string'
-app.get('/', async (_req, res) => {
+/*app.get('/', async (_req, res) => {
   const startDate = await CalcData(0)
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
   res.send(data);
-})
+})*/
 app.post('/', async (req, res) => {
-  console.log('Received data:', req.body); // Access the submitted data
+  //console.log('Received data:', req.body); // Access the submitted data
   const startDate = await CalcData(Number(req.body.page))
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
