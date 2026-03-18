@@ -11,6 +11,7 @@ const app = express()
 app.use(bodyParser.json())
 const port = process.env.PORT || 3000;
 let statusMap = new Map()
+let differenceSet = new Set()
 app.get('/page/:page', async (_req, res) => {
   console.log('render page', _req.params.page)
   const startDate = _req.params.page
@@ -28,9 +29,22 @@ app.get('/page/:page', async (_req, res) => {
   res.send(data)//, statusMap]);
 })
 app.post('/api/id/:id', (_req, res) => {
-  const userData = _req.body; 
-  //change statusMap
-  console.log('Received user data:', userData, _req.params);
+  const userData = _req.body;
+  const { id } = _req.params
+  const oldStatus = statusMap.get(id)
+  //console.log('oldStatus', oldStatus)
+  if (oldStatus === true) {
+    statusMap.set(id, false)
+    count = count - 1
+    differenceSet.delete(id)
+    //console.log('count', count)
+  } else {
+    statusMap.set(id, true)
+    count = count + 1
+    differenceSet.add(id)
+  };
+  console.log('statusMap', statusMap)
+  console.log('Received user data:', id);
 
   // In a real application, you would save this data to a database
   // and send an appropriate response.
