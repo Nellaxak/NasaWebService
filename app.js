@@ -27,10 +27,10 @@ app.get('/page/:page', async (_req, res) => {
   console.log('count', data.element_count)
   res.send(data)//, statusMap]);
 })
-app.post('/api/id', (_req, res) => {
+app.post('/api/:id', (_req, res) => {
   const userData = _req.body; 
   //change statusMap
-  console.log('Received user data:', userData);
+  console.log('Received user data:', userData, _req.params);
 
   // In a real application, you would save this data to a database
   // and send an appropriate response.
