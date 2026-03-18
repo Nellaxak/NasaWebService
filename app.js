@@ -10,6 +10,7 @@ const app = express()
 //app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 const port = process.env.PORT || 3000;
+let count = 0
 let statusMap = new Map()
 let differenceSet = new Set()
 app.get('/page/:page', async (_req, res) => {
