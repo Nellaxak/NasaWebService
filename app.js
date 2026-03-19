@@ -23,8 +23,8 @@ app.get('/page/:page', async (_req, res) => {
   //const dates = Object.keys(list)
   const arrObjects = Object.values(list)
   const dhhh = arrObjects[0].map(
-    async (item) => {
-      console.log('item', item)
+    (item) => {
+      //console.log('item', item)
       item.status = 0
       return item
     }
