@@ -35,6 +35,7 @@ app.get('/page/:page', async (_req, res) => {
 })
 app.post('/api/id/:id', async (_req, res) => {
   //const userData = _req.body;
+  console.log('post req')
   const { id } = _req.params
   //console.log('Received user data:', id);
   const oldStatus = statusMap.get(id)
