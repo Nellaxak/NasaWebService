@@ -22,13 +22,13 @@ app.get('/page/:page', async (_req, res) => {
   const list = data.near_earth_objects
   //const dates = Object.keys(list)
   const arrObjects = Object.values(list)
-  const dhhh = await Promise.all(arrObjects[0].map(
+  const dhhh = arrObjects[0].map(
     async (item) => {
       console.log('item', item)
       item.status = 0
       return item
     }
-  ));
+  );
   //const result = await db.records.bulkInsert(newList)
   console.log('count', dhhh); //data.element_count)
   res.send(data)//, statusMap]);
