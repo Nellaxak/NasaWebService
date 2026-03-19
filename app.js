@@ -30,8 +30,8 @@ app.get('/page/:page', async (_req, res) => {
     }
   );
   //const result = await db.records.bulkInsert(newList)
-  console.log('count', dhhh); //data.element_count)
-  res.send(data)//, statusMap]);
+  console.log('count', data.element_count)
+  res.send(dhhh)//, statusMap]);
 })
 app.post('/api/id/:id', async (_req, res) => {
   //const userData = _req.body;
