@@ -33,6 +33,13 @@ app.get('/page/:page', async (_req, res) => {
   console.log('count', data.element_count)
   res.send(data)//, statusMap]);
 })
+app.get('/api/id/:id', async (_req, res) => {
+  const { id } = _req.params
+  res.status(200).json({
+    message: 'status updated successfully1',
+    data: statusMap.get(id)
+  });
+})
 app.post('/api/id/:id', async (_req, res) => {
   //const userData = _req.body;
   console.log('post req')
@@ -40,7 +47,7 @@ app.post('/api/id/:id', async (_req, res) => {
   //console.log('Received user data:', id);
   const oldStatus = statusMap.get(id)
   //console.log('oldStatus', oldStatus)
-  if (oldStatus === true) {
+  if (oldStatus === true || oldStatus === undefined) {
     statusMap.set(id, false)
     count = count - 1
     differenceSet.delete(id)
@@ -53,7 +60,7 @@ app.post('/api/id/:id', async (_req, res) => {
   console.log('statusMap', statusMap)
   res.status(200).json({
     message: 'status updated successfully',
-    data: id
+    data: statusMap.get(id)
   });
 });
 app.listen(port, async () => {
