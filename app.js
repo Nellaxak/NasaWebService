@@ -30,7 +30,7 @@ app.get('/page/:page', async (_req, res) => {
       return item
     }
   );*/
-  console.log('count', data.element_count)
+  console.log('count', data.element_count, resp.status)
   res.send(data)//, statusMap]);
 })
 app.get('/api/id/:id', async (_req, res) => {
