@@ -18,20 +18,9 @@ app.get('/page/:page', async (_req, res) => {
   const startDate = _req.params.page
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
-  //const data = await StreamReader(resp)
-  /*const list = data.near_earth_objects
-  //const dates = Object.keys(list)
-  const arrObjects = Object.values(list)*/
-  //readable stream+writable
-  /*const dhhh = arrObjects[0].map(
-    (item) => {
-      //console.log('item', item)
-      item.status = 0
-      return item
-    }
-  );*/
   console.log('count', data.element_count, resp.status)
-  res.send(data)//, statusMap]);
+  res.set('count-Header', data.element_count);
+  res.send(data)
 })
 app.get('/api/id/:id', async (_req, res) => {
   const { id } = _req.params
