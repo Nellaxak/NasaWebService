@@ -16,11 +16,11 @@ let differenceSet = new Set()
 app.get('/page/:page', async (_req, res) => {
   console.log('render page', _req.params)
   const page = _req.params.page
-  //page=0&size=20
-  const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/browse?page=${page}&size=8&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
+  //https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY
+  const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/neo/browse?page=${page}&size=8&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
-  console.log('count', data.element_count, resp.status)
-  res.set('count-Header', data.element_count);
+  console.log('status',resp.status)
+  //res.set('count-Header', data.element_count);
   res.send(data)
 })
 app.get('/api/id/:id', async (_req, res) => {
