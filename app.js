@@ -20,11 +20,12 @@ app.get('/page/:page', async (_req, res) => {
   const data = await resp.json()
   const prev = data.links.prev
   const respPrev = await fetch(prev)
-  console.log('dddd', respPrev.status)
   const next = data.links.next
   const self = data.links.self
+  const respNext = await fetch(next)
+  const respSelf = await fetch(self)
   console.log('count', data.element_count, resp.status)
-  res.send(respPrev.status)
+  res.send({prev: await respPrev.json(), next: await respNext.json(), self: await respSelf.json()})
 })
 app.get('/api/id/:id', async (_req, res) => {
   const { id } = _req.params
