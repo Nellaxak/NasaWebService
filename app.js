@@ -24,7 +24,7 @@ app.get('/page/:page', async (_req, res) => {
   const next = data.links.next
   const self = data.links.self
   console.log('count', data.element_count, resp.status)
-  res.send(data)
+  res.send(respPrev.status)
 })
 app.get('/api/id/:id', async (_req, res) => {
   const { id } = _req.params
