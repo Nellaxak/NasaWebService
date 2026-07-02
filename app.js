@@ -18,6 +18,11 @@ app.get('/page/:page', async (_req, res) => {
   const startDate = _req.params.page
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
+  const prev = data.links.prev
+  const respPrev = await fetch(prev)
+  console.log('dddd', respPrev.status)
+  const next = data.links.next
+  const self = data.links.self
   console.log('count', data.element_count, resp.status)
   res.send(data)
 })
