@@ -29,7 +29,7 @@ app.get('/page/:page', async (_req, res) => {
   const dataNext=await respNext.json().near_earth_objects
   const dataSelf=await respSelf.json().near_earth_objects
   
-  allArr.push(..dataPrev)
+  allArr.push(...dataPrev)
   allArr.push(...(dataSelf.near_earth_objects))
   allArr.push(...(dataNext.near_earth_objects))
   console.log('count', data.element_count, resp.status)
