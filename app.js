@@ -4,7 +4,24 @@ import bodyParser from "body-parser";
 /*import { createRxDatabase, addRxPlugin } from 'rxdb';
 import { getRxStorageMemory } from 'rxdb/plugins/storage-memory'
 import { RxDBUpdatePlugin } from 'rxdb/plugins/update';*/
-
+export default async function CalcData(params) {
+    //console.log('CalcData', await params)
+    //const count = await CountPage.getCount();
+    let currentDate = new Date()
+    currentDate.setDate(currentDate.getDate());
+    const page = params
+    //if (scroll === 'bottom') {
+    // must be page>0
+    //}
+    //if (Number(page) > 0) {
+    const newPage = Number(currentDate.getDate()) + Number(page)
+    currentDate.setDate(newPage);//+1
+    //console.log('myDate', new Intl.DateTimeFormat('ru-RU', optionsDate).format(currentDate))
+    let startDate = currentDate.getFullYear() + '-' +
+        (currentDate.getMonth() + 1) + '-' +
+        currentDate.getDate();
+    return startDate
+}
 const app = express()
 
 //app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,7 +32,8 @@ let statusMap = new Map()
 let differenceSet = new Set()
 app.get('/page/:page', async (_req, res) => {
   console.log('render page', _req.params)
-  const startDate = _req.params.page
+  const startDate = await CalcData(_req.params.page)
+  //const startDate = _req.params.page
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
 
