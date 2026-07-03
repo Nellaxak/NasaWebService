@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 /*import { createRxDatabase, addRxPlugin } from 'rxdb';
 import { getRxStorageMemory } from 'rxdb/plugins/storage-memory'
 import { RxDBUpdatePlugin } from 'rxdb/plugins/update';*/
-export default async function CalcData(params) {
+async function CalcData(params) {
     //console.log('CalcData', await params)
     //const count = await CountPage.getCount();
     let currentDate = new Date()
