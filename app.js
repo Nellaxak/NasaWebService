@@ -21,12 +21,14 @@ app.get('/page/:page', async (_req, res) => {
 
   const prev = data.links.prev
   const respPrev = await fetch(prev)
+
   const next = data.links.next
   const self = data.links.self
   const respNext = await fetch(next)
   const respSelf = await fetch(self)
   const allArr=[]
   const dataPrev=await respPrev.json()
+  console.log('dataPrev',dataPrev)
   const dataNext=await respNext.json()
   const dataSelf=await respSelf.json()
   const near_earth_objectsPrev=dataPrev.near_earth_objects
