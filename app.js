@@ -18,6 +18,7 @@ app.get('/page/:page', async (_req, res) => {
   const startDate = _req.params.page
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
+
   const prev = data.links.prev
   const respPrev = await fetch(prev)
   const next = data.links.next
@@ -26,8 +27,8 @@ app.get('/page/:page', async (_req, res) => {
   const respSelf = await fetch(self)
   const allArr=[]
   const dataPrev=await respPrev.json()
-  const dataNext=await respNext.json().near_earth_objects
-  const dataSelf=await respSelf.json().near_earth_objects
+  const dataNext=await respNext.json()
+  const dataSelf=await respSelf.json()
   const near_earth_objectsPrev=dataPrev.near_earth_objects
   const near_earth_objectsNext=dataNext.near_earth_objects
   const near_earth_objectsSelf=dataSelf.near_earth_objects
