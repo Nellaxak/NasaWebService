@@ -51,13 +51,13 @@ app.get('/page/:page', async (_req, res) => {
   const dataSelf=await respSelf.json()
   const near_earth_objectsPrev=dataPrev.near_earth_objects
   console.log('near_earth_objectsPrev',near_earth_objectsPrev)
-  const near_earth_objectsNext=dataNext.near_earth_objects[0]
+  /*const near_earth_objectsNext=dataNext.near_earth_objects[0]
   const near_earth_objectsSelf=dataSelf.near_earth_objects[0]
   allArr.push(...near_earth_objectsPrev)
   allArr.push(...near_earth_objectsSelf)
-  allArr.push(...near_earth_objectsNext)
+  allArr.push(...near_earth_objectsNext)*/
   console.log('count', data.element_count, resp.status)
-  res.send({data:allArr,startItem: dataPrev.element_count})
+  res.send({data:near_earth_objectsPrev,startItem: dataPrev.element_count})
 })
 app.get('/api/id/:id', async (_req, res) => {
   const { id } = _req.params
