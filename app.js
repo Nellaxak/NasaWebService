@@ -30,8 +30,8 @@ app.get('/page/:page', async (_req, res) => {
   const dataSelf=await respSelf.json().near_earth_objects
   
   allArr.push(...dataPrev)
-  allArr.push(...(dataSelf.near_earth_objects))
-  allArr.push(...(dataNext.near_earth_objects))
+  allArr.push(...dataSelf)
+  allArr.push(...dataNext)
   console.log('count', data.element_count, resp.status)
   res.send({data:allArr,startItem: dataPrev.element_count})
 })
