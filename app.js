@@ -93,7 +93,7 @@ app.listen(port, async () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
-export default app
+//export default app
 
 /*
 const port = process.env.PORT || 3001;
