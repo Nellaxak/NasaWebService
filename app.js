@@ -34,10 +34,10 @@ app.get('/page/:page', async (_req, res) => {
   const near_earth_objectsPrev=dataPrev.near_earth_objects
   console.log('near_earth_objectsPrev',near_earth_objectsPrev)
   const near_earth_objectsNext=dataNext.near_earth_objects[0]
-  const near_earth_objectsSelf=dataSelf.near_earth_objects
-  /*allArr.push(...near_earth_objectsPrev)
+  const near_earth_objectsSelf=dataSelf.near_earth_objects[0]
+  allArr.push(...near_earth_objectsPrev)
   allArr.push(...near_earth_objectsSelf)
-  allArr.push(...near_earth_objectsNext)*/
+  allArr.push(...near_earth_objectsNext)
   console.log('count', data.element_count, resp.status)
   res.send({data:allArr,startItem: dataPrev.element_count})
 })
