@@ -8,18 +8,23 @@ async function CalcData(params) {
     //console.log('CalcData', await params)
     //const count = await CountPage.getCount();
     let currentDate = new Date()
-    currentDate.setDate(currentDate.getDate());
+    let mskDate = new Intl.DateTimeFormat('ru-RU', {
+    timeZone: 'Europe/Moscow',
+    dateStyle: 'short',
+    timeStyle: 'medium'
+}).format(new Date());
+    mskDate.setDate(mskDate.getDate());
     const page = params
     //if (scroll === 'bottom') {
     // must be page>0
     //}
     //if (Number(page) > 0) {
-    const newPage = Number(currentDate.getDate()) + Number(page)
+    const newPage = Number(mskDate.getDate()) + Number(page)
     currentDate.setDate(newPage);//+1
     //console.log('myDate', new Intl.DateTimeFormat('ru-RU', optionsDate).format(currentDate))
-    let startDate = currentDate.getFullYear() + '-' +
-        (currentDate.getMonth() + 1) + '-' +
-        currentDate.getDate();
+    let startDate = mskDate.getFullYear() + '-' +
+        (mskDate.getMonth() + 1) + '-' +
+        mskDate.getDate();
     return startDate
 }
 const app = express()
