@@ -21,7 +21,7 @@ async function CalcData(params) {
     //}
     //if (Number(page) > 0) {
     const newPage = Number(mskDate) + Number(page)
-    console.log('vnbnb',Number(mskDate))
+    console.log('vnbnb',mskDate.getTime())
     //mskDate.setDate(newPage);//+1
     //console.log('myDate', new Intl.DateTimeFormat('ru-RU', optionsDate).format(currentDate))
     let startDate = mskDate.getFullYear() + '-' +
