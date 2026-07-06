@@ -33,8 +33,8 @@ console.log(mskDate.toLocaleString('ru-RU', options));
     // must be page>0
     //}
     //if (Number(page) > 0) {
-    const newPage = Number(mskDate) + Number(page)
-    console.log('vnbnb',mskDate.getTime())
+    const newPage = mskDate.getTime() + Number(page)*86400000
+    console.log('vnbnb',new Date(newPage).toLocaleString('ru-RU'))
     //mskDate.setDate(newPage);//+1
     //console.log('myDate', new Intl.DateTimeFormat('ru-RU', optionsDate).format(currentDate))
     let startDate = mskDate.getFullYear() + '-' +
