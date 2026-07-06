@@ -41,8 +41,8 @@ console.log(mskDate.toLocaleString('ru-RU', options));
   month: '2-digit',     
   day: '2-digit',
 });
-let startDate =formatter.format(newPage)
-console.log('startDate',startDate); 
+//let startDate =formatter.format(newPage)
+//console.log('startDate',startDate); 
     //const newPage = Number(currentDate.getDate()) + Number(page)
    // currentDate.setDate(newPage);//+1
     //console.log('myDate', new Intl.DateTimeFormat('ru-RU', optionsDate).format(currentDate))
