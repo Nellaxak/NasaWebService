@@ -13,7 +13,7 @@ async function CalcData(params) {
     dateStyle: 'short',
     timeStyle: 'medium'
 }).format(new Date());
-    mskDate.setDate(mskDate.getDate());
+    //mskDate.setDate(mskDate.getDate());
     const page = params
     //if (scroll === 'bottom') {
     // must be page>0
