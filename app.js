@@ -8,11 +8,24 @@ async function CalcData(params) {
     //console.log('CalcData', await params)
     //const count = await CountPage.getCount();
     let currentDate = new Date()
-    let mskDate = new Intl.DateTimeFormat('ru-RU', {
+    /*let mskDate = new Intl.DateTimeFormat('ru-RU', {
     timeZone: 'Europe/Moscow',
     dateStyle: 'short',
     timeStyle: 'medium'
-}).format(new Date());
+}).format(new Date());*/
+    const mskDate = new Date();
+const options = {
+  timeZone: 'Etc/GMT-3',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit'
+};
+
+console.log(mskDate.toLocaleString('ru-RU', options)); 
+
     console.log('mskDate',mskDate)
     //mskDate.setDate(mskDate.getDate());
     const page = params
