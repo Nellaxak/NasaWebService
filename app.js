@@ -88,6 +88,7 @@ app.get('/page/:page', async (_req, res) => {
   const near_earth_objectsNext=Object.values(dataNext.near_earth_objects)
   const near_earth_objectsSelf=Object.values(dataSelf.near_earth_objects)
     if (_req.params.page>0){
+        console.log('page>0',_req.params.page)
          const dataPrev=await respPrev.json()
         const near_earth_objectsPrev=Object.values(dataPrev.near_earth_objects)
   allArr.push(...near_earth_objectsPrev) 
