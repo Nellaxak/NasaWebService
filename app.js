@@ -43,8 +43,8 @@ console.log(mskDate.toLocaleString('ru-RU', options));
 });
 let startDate =formatter.format(newPage)
 console.log('startDate',startDate); 
-    const newPage = Number(currentDate.getDate()) + Number(page)
-    currentDate.setDate(newPage);//+1
+    //const newPage = Number(currentDate.getDate()) + Number(page)
+   // currentDate.setDate(newPage);//+1
     //console.log('myDate', new Intl.DateTimeFormat('ru-RU', optionsDate).format(currentDate))
     /*const year=newPage/31600800000
     const month=newPage/
