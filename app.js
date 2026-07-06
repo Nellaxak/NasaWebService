@@ -9,18 +9,53 @@ async function CalcData(params) {
     //console.log('CalcData', await params)
     //const count = await CountPage.getCount();
     let currentDate = new Date()
+    /*let mskDate = new Intl.DateTimeFormat('ru-RU', {
+    timeZone: 'Europe/Moscow',
+    dateStyle: 'short',
+    timeStyle: 'medium'
+}).format(new Date());*/
+    const mskDate = new Date();
+const options = {
+  timeZone: 'Etc/GMT-3',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit'
+};
+console.log(mskDate.toLocaleString('ru-RU', options)); 
+    console.log('mskDate',mskDate)
+    //mskDate.setDate(mskDate.getDate());
     currentDate.setDate(currentDate.getDate());
     const page = params
     //if (scroll === 'bottom') {
     // must be page>0
     //}
     //if (Number(page) > 0) {
+    const newPage = mskDate.getTime() + Number(page)*86400000
+    console.log('vnbnb',new Date(newPage).toLocaleString('ru-RU'))
+    //mskDate.setDate(newPage);//+1
+    const formatter = new Intl.DateTimeFormat('en-CA', {
+  year: 'numeric',
+  month: '2-digit',     
+  day: '2-digit',
+});
+let startDate =formatter.format(newPage)
+console.log('startDate',startDate); 
     const newPage = Number(currentDate.getDate()) + Number(page)
     currentDate.setDate(newPage);//+1
     //console.log('myDate', new Intl.DateTimeFormat('ru-RU', optionsDate).format(currentDate))
+    /*const year=newPage/31600800000
+    const month=newPage/
+        let startDate = newPage.getFullYear() + '-' +
+        (newPage.getMonth() + 1) + '-' +
+        newPage.getDate();*/
     let startDate = currentDate.getFullYear() + '-' +
         (currentDate.getMonth() + 1) + '-' +
         currentDate.getDate();
+    return startDate
+}
     return startDate
 }
 const app = express()
