@@ -37,9 +37,9 @@ console.log(mskDate.toLocaleString('ru-RU', options));
     console.log('vnbnb',new Date(newPage).toLocaleString('ru-RU'))
     //mskDate.setDate(newPage);//+1
     //console.log('myDate', new Intl.DateTimeFormat('ru-RU', optionsDate).format(currentDate))
-    let startDate = mskDate.getFullYear() + '-' +
-        (mskDate.getMonth() + 1) + '-' +
-        mskDate.getDate();
+    let startDate = newPage.getFullYear() + '-' +
+        (newPage.getMonth() + 1) + '-' +
+        newPage.getDate();
     return startDate
 }
 const app = express()
