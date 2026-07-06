@@ -19,8 +19,8 @@ async function CalcData(params) {
     // must be page>0
     //}
     //if (Number(page) > 0) {
-    const newPage = Number(mskDate.getDate()) + Number(page)
-    currentDate.setDate(newPage);//+1
+    const newPage = Number(mskDate) + Number(page)
+    mskDate.setDate(newPage);//+1
     //console.log('myDate', new Intl.DateTimeFormat('ru-RU', optionsDate).format(currentDate))
     let startDate = mskDate.getFullYear() + '-' +
         (mskDate.getMonth() + 1) + '-' +
