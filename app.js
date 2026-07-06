@@ -56,8 +56,6 @@ console.log(mskDate.toLocaleString('ru-RU', options));
         currentDate.getDate();
     return startDate
 }
-    return startDate
-}
 const app = express()
 
 //app.use(bodyParser.urlencoded({ extended: true }));
