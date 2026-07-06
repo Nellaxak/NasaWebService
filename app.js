@@ -36,10 +36,19 @@ console.log(mskDate.toLocaleString('ru-RU', options));
     const newPage = mskDate.getTime() + Number(page)*86400000
     console.log('vnbnb',new Date(newPage).toLocaleString('ru-RU'))
     //mskDate.setDate(newPage);//+1
+    const formatter = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: '2-digit',     
+  day: '2-digit',
+});
+let startDate =formatter.format(newPage)
+console.log('startDate',startDate); 
     //console.log('myDate', new Intl.DateTimeFormat('ru-RU', optionsDate).format(currentDate))
-    let startDate = newPage.getFullYear() + '-' +
+    /*const year=newPage/31600800000
+    const month=newPage/
+        let startDate = newPage.getFullYear() + '-' +
         (newPage.getMonth() + 1) + '-' +
-        newPage.getDate();
+        newPage.getDate();*/
     return startDate
 }
 const app = express()
