@@ -36,7 +36,7 @@ console.log(mskDate.toLocaleString('ru-RU', options));
     const newPage = mskDate.getTime() + Number(page)*86400000
     console.log('vnbnb',new Date(newPage).toLocaleString('ru-RU'))
     //mskDate.setDate(newPage);//+1
-    const formatter = new Intl.DateTimeFormat('en-US', {
+    const formatter = new Intl.DateTimeFormat('en-CA', {
   year: 'numeric',
   month: '2-digit',     
   day: '2-digit',
