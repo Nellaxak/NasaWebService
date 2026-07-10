@@ -33,8 +33,8 @@ console.log(mskDate.toLocaleString('ru-RU', options));
     // must be page>0
     //}
     //if (Number(page) > 0) {
-    const newPage = mskDate.getTime() + Number(page)*86400000
-    console.log('vnbnb',new Date(newPage).toLocaleString('ru-RU'))
+    //const newPage = mskDate.getTime() + Number(page)*86400000
+    //console.log('vnbnb',new Date(newPage).toLocaleString('ru-RU'))
     //mskDate.setDate(newPage);//+1
     const formatter = new Intl.DateTimeFormat('en-CA', {
   year: 'numeric',
