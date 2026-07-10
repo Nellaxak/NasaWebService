@@ -88,8 +88,10 @@ app.get('/page/:page', async (_req, res) => {
   //console.log('near_earth_objectsPrev',near_earth_objectsPrev)
   const near_earth_objectsNext=Object.values(dataNext.near_earth_objects)
   const near_earth_objectsSelf=Object.values(dataSelf.near_earth_objects)
+      const dataPrev=await respPrev.json()
+      console.log('page=0',_req.params.page,Object.keys(dataPrev.near_earth_objects))
     if (Number(_req.params.page)>0){
-         const dataPrev=await respPrev.json()
+       
         console.log('page>0',_req.params.page,Object.keys(dataPrev.near_earth_objects))
         
         const near_earth_objectsPrev=Object.values(dataPrev.near_earth_objects)
