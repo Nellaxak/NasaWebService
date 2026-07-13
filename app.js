@@ -67,7 +67,7 @@ let statusMap = new Map()
 let differenceSet = new Set()
 app.get('/page/:page', async (_req, res) => {
   console.log('render page', _req.params)
-    if (Number(_req.params.page)>0){
+    if (Number(_req.params.page)>-1){
   const startDate = await CalcData(_req.params.page)
     }
   //const startDate = _req.params.page
