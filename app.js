@@ -79,9 +79,10 @@ app.get('/page/:page', async (_req, res) => {
   //const self = data.links.self
   //const respNext = await fetch(next)
   //const respSelf = await fetch(self)
-  const allArr=[]
+ 
  const near_earth_objects=Object.values(data.near_earth_objects)
-  allArr.push(...near_earth_objects) 
+     const allArr=[...near_earth_objects]
+  //allArr.push(...near_earth_objects) 
   //console.log('dataPrev',dataPrev)
   //const dataNext=await respNext.json()
   ///const dataSelf=await respSelf.json()
