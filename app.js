@@ -68,6 +68,7 @@ let differenceSet = new Set()
 let startDate
 app.get('/page/:page', async (_req, res) => {
   console.log('render page', _req.params)
+    let startDate=''
     if (Number(_req.params.page)>-1){
   startDate = await CalcData(_req.params.page)
     }
