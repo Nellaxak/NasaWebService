@@ -67,7 +67,9 @@ let statusMap = new Map()
 let differenceSet = new Set()
 app.get('/page/:page', async (_req, res) => {
   console.log('render page', _req.params)
+    if (Number(_req.params.page)>0){
   const startDate = await CalcData(_req.params.page)
+    }
   //const startDate = _req.params.page
   const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
