@@ -66,6 +66,7 @@ let count = 0
 let statusMap = new Map()
 let differenceSet = new Set()
 let startDate
+ const arrRes=[]
 app.get('/page/:page', async (_req, res) => {
   console.log('render page', _req.params)
     let startDate=''
@@ -78,7 +79,13 @@ app.get('/page/:page', async (_req, res) => {
      const allArr=[...near_earth_objects]
   console.log('count', data.element_count, resp.status)
         const arr=allArr.flat()
-        arr.map(num => console.log(num.id)); 
+       
+        arr.map(num => {
+            console.log(num.id))
+            arrRes.splice(num.id,0,num)
+        return num.id
+    }; 
+    console.log(arrRes))    
   res.send({data:arr})   
     } else {
         res.send({data: []})
