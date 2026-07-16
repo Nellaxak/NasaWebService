@@ -78,7 +78,9 @@ app.get('/page/:page', async (_req, res) => {
      const allArr=[...near_earth_objects]
   console.log('count', data.element_count, resp.status)
   res.send({data:allArr.flat()})   
-    } 
+    } else {
+        res.send({data: []})
+    }
 })
 app.get('/api/id/:id', async (_req, res) => {
   const { id } = _req.params
