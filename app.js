@@ -84,7 +84,7 @@ app.get('/page/:page', async (_req, res) => {
             console.log(num.id)
             arrRes.splice(num.id,0,num)
         return num.id
-    }; 
+    }) 
     console.log(arrRes))    
   res.send({data:arr})   
     } else {
