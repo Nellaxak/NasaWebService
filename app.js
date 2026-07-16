@@ -78,7 +78,7 @@ app.get('/page/:page', async (_req, res) => {
      const allArr=[...near_earth_objects]
   console.log('count', data.element_count, resp.status)
         const arr=allArr.flat()
-        arr.map(num => console.log(num)); 
+        arr.map(num => console.log(num.id)); 
   res.send({data:arr})   
     } else {
         res.send({data: []})
