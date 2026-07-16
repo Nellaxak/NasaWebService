@@ -71,42 +71,14 @@ app.get('/page/:page', async (_req, res) => {
     let startDate=''
     if (Number(_req.params.page)>-1){
   startDate = await CalcData(_req.params.page)
-    }
-  //const startDate = _req.params.page
-  const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
+      const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
-
-  //const prev = data.links.prev
-  //const respPrev = await fetch(prev)
-
-  //const next = data.links.next
-  //const self = data.links.self
-  //const respNext = await fetch(next)
-  //const respSelf = await fetch(self)
  
  const near_earth_objects=Object.values(data.near_earth_objects)
      const allArr=[...near_earth_objects]
-  //allArr.push(...near_earth_objects) 
-  //console.log('dataPrev',dataPrev)
-  //const dataNext=await respNext.json()
-  ///const dataSelf=await respSelf.json()
-
-  //console.log('near_earth_objectsPrev',near_earth_objectsPrev)
-  //const near_earth_objectsNext=Object.values(dataNext.near_earth_objects)
-  //const near_earth_objectsSelf=Object.values(dataSelf.near_earth_objects)
-      //const dataPrev=await respPrev.json()
-      //console.log('page=0',_req.params.page,Object.keys(dataPrev.near_earth_objects))
-    //if (Number(_req.params.page)>0){
-       
-        //console.log('page>0',_req.params.page,Object.keys(dataPrev.near_earth_objects))
-        
-        //const near_earth_objectsPrev=Object.values(dataPrev.near_earth_objects)
-  //allArr.push(...near_earth_objectsPrev) 
-    //}
-  //allArr.push(...near_earth_objectsSelf)
-  //allArr.push(...near_earth_objectsNext)
   console.log('count', data.element_count, resp.status)
-  res.send({data:allArr.flat()})
+  res.send({data:allArr.flat()})   
+    } 
 })
 app.get('/api/id/:id', async (_req, res) => {
   const { id } = _req.params
