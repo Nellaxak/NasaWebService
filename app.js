@@ -80,12 +80,12 @@ app.get('/page/:page', async (_req, res) => {
   console.log('count', data.element_count, resp.status)
         const arr=allArr.flat()
        
-        arr.map(num => {
+      /*  arr.map(num => {
             console.log(num.id)
             arrRes.splice(num.id,0,num)
         return num.id
-    }) 
-    console.log(arrRes.length)   
+    }) */
+    //console.log(arrRes.length)   
   res.send({data:arr})   
     } else {
         res.send({data: []})
