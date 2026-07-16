@@ -81,7 +81,7 @@ app.get('/page/:page', async (_req, res) => {
         const arr=allArr.flat()
        
         arr.map(num => {
-            console.log(num.id))
+            console.log(num.id)
             arrRes.splice(num.id,0,num)
         return num.id
     }; 
