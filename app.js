@@ -88,8 +88,9 @@ const uint8Array = encoder.encode(jsonString);
 
 // Получаем бинарный буфер (ArrayBuffer)
 const binaryData = uint8Array.buffer;
+    const nodeBuffer = Buffer.from(binaryData);
  res.setHeader('Content-Type', 'application/octet-stream');
-    res.end(binaryData);       
+    res.end(nodeBuffer);       
   //res.send({data:arr})   
    /* } else {
         res.send({data: []})
