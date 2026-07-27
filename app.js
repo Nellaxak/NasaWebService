@@ -70,7 +70,7 @@ let startDate
 app.get('/page/:page', async (_req, res) => {
   console.log('render page', _req.params)
     let startDate=''
-    if (Number(_req.params.page)>=0){
+    //if (Number(_req.params.page)>=0){
   startDate = await CalcData(_req.params.page)
       const resp = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=3wa5hHgFuqhf6XiefvqzkcDQWZ01aOOK4vNZEXsP`);
   const data = await resp.json()
@@ -79,17 +79,21 @@ app.get('/page/:page', async (_req, res) => {
      const allArr=[...near_earth_objects]
   console.log('count', data.element_count, resp.status)
         const arr=allArr.flat()
-       
-      /*  arr.map(num => {
-            console.log(num.id)
-            arrRes.splice(num.id,0,num)
-        return num.id
-    }) */
-    //console.log(arrRes.length)   
-  res.send({data:arr})   
-    } else {
+       // 1. Превращаем массив в строку JSON
+const jsonString = JSON.stringify(arr);
+
+// 2. Кодируем строку в байты (UTF-8)
+const encoder = new TextEncoder();
+const uint8Array = encoder.encode(jsonString);
+
+// Получаем бинарный буфер (ArrayBuffer)
+const binaryData = uint8Array.buffer;
+ res.setHeader('Content-Type', 'application/octet-stream');
+    res.end(binaryData);       
+  //res.send({data:arr})   
+   /* } else {
         res.send({data: []})
-    }
+    }*/
 })
 app.get('/api/id/:id', async (_req, res) => {
   const { id } = _req.params
